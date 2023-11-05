@@ -1,0 +1,60 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+condition = True
+while condition:
+    user_choice=int(input('what do you choose? Type "0" for rock, "1" for paper, or "2" for scissors.\n'))
+    comp_choice=random.randint(0,2)
+    if comp_choice==0:
+        print(rock)
+        print('Computer chooses "Rock"')
+    elif comp_choice==1:
+        print(paper)
+        print('Computer chooses "Paper"')
+    else:
+        print(scissors)
+        print('Computer chooses "Scissors"')
+    if user_choice==0:
+        print(rock)
+        print('You choose "Rock"')
+    elif user_choice==1:
+        print(paper)
+        print('You choose "paper"')
+    else:
+        print(scissors)
+        print('You choose "scissors"')
+    if (comp_choice-user_choice==1):
+        print("You lose! Better luck next time :(")
+    elif (comp_choice==user_choice):
+        print("Drew")
+    else:
+        print("Hurray!! You won! :)")
+    exit = input('Type "exit" to exit from the game or press enter to continue').lower()
+    if exit=="exit":
+        condition=False
